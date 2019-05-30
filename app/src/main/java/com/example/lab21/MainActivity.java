@@ -13,30 +13,21 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
 
-    TextView naladowanie, stan, zrodloZasilania, czyDostepna, poziom, technologia, temp, napiecie;
-    ProgressBar progressBar;
-    IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-    Intent batteryStatus;
+    private TextView naladowanie, stan, zrodloZasilania, czyDostepna, poziom, technologia, temp, napiecie;
+    private ProgressBar progressBar;
 
     private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             naladowanie.setText(String.valueOf(intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0)));
             stan.setText(String.valueOf(intent.getIntExtra(BatteryManager.EXTRA_HEALTH, 0)));
-
             zrodloZasilania.setText(String.valueOf(intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0)));
             czyDostepna.setText(String.valueOf(intent.getIntExtra(BatteryManager.EXTRA_PRESENT, 0)));
-
             poziom.setText(String.valueOf(intent.getIntExtra(BatteryManager.EXTRA_STATUS, 0)));
-
             technologia.setText(String.valueOf(intent.getIntExtra(BatteryManager.EXTRA_TECHNOLOGY, 0)));
-
             temp.setText(String.valueOf(intent.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, 0)));
-
             napiecie.setText(String.valueOf(intent.getIntExtra(BatteryManager.EXTRA_VOLTAGE, 0)));
-
             czyDostepna.setText(String.valueOf(intent.getIntExtra(BatteryManager.EXTRA_PRESENT, 0)));
-            progressBar.setMax(100);
             progressBar.setProgress(intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0));
         }
     };
@@ -45,9 +36,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        naladowanie = findViewById(R.id.wartoscNaladowania);
+        findWidgets();
+        registerReceiver(broadcastReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+    }
 
+    private void findWidgets() {
+        naladowanie = findViewById(R.id.wartoscNaladowania);
         progressBar = findViewById(R.id.progressBar);
+        progressBar.setMax(100);
         stan = findViewById(R.id.wartoscStanu);
         zrodloZasilania = findViewById(R.id.wartoscZrodlaNaladowania);
         czyDostepna = findViewById(R.id.wartoscDostepnosci);
@@ -55,10 +51,6 @@ public class MainActivity extends AppCompatActivity {
         technologia = findViewById(R.id.wartoscTechnologii);
         temp = findViewById(R.id.wartoscTemperatury);
         napiecie = findViewById(R.id.wartoscNapiecia);
-
-        batteryStatus = registerReceiver(broadcastReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
-
-
     }
 
 }
