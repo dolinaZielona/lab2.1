@@ -1,18 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:text="Informacje o baterii" />
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/poziomNaladowania"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Poziom naladowania: " />
+
+        <TextView
+            android:id="@+id/wartoscNaladowania"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="30" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/stan"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Stan: " />
+
+        <TextView
+            android:id="@+id/wartoscStanu"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="aaaaaa" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/zrodloNaladowania"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Zrodlo naladowania: " />
+
+        <TextView
+            android:id="@+id/wartoscZrodlaNaladowania"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="aaaaaa" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dostepna"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Dostepna?: " />
+
+        <TextView
+            android:id="@+id/wartoscDostepnosci"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="aaaaaa" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/poziom"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Poziom: " />
+
+        <TextView
+            android:id="@+id/wartoscPoziomu"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="aaaaaa" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/technologia"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Technologia: " />
+
+        <TextView
+            android:id="@+id/wartoscTechnologii"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="aaaaaa" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/temperatura"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Temperatura: " />
+
+        <TextView
+            android:id="@+id/wartoscTemperatury"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="aaaaaa" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/napiecie"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Napiecie: " />
+
+        <TextView
+            android:id="@+id/wartoscNapiecia"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="aaaaaa" />
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
